@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+     
+    
+    <link rel="stylesheet" href="styles.css">
+    <title>Chess Hub</title>
+
+
+    
+</head>
+<body>
+    <div id="loaderDiv">
+        <img id="loader" src="/FinalProject/chessGallery/chessLoader1.gif" >
+    </div>
+
+    <div id="audioDiv">
+        <div id="stopAudio" onclick="cutAudio()">⏹</div>
+        <div id="on_off" onclick="toggleAudio()">⏵</div> 
+        <div id="musiclogo">♪</div>
+          
+    </div>   
+     
+
+    <header>
+        <div id="headerDiv">
+            
+            <div id="shopping">
+                <p>{Pass To Pawn}</p>
+            </div>
+            <div class="filSpace"></div>
+
+            <img src="/FinalProject/chessGallery/Pawnlogo.png">
+            
+            <div class="filSpace"></div>
+            <nav id="dropdown">
+                <button id="dropdownBtn">Menu  ▼</button>
+                <div id="dropdownContent">
+                    <a class="link" href="index.html">Profile-Search</a>
+                    <a class="link" href="community.html">Learn Chess</a>
+                    <a class="link" href="Shop.html">Shopping</a>
+                     
+                </div>
+            </nav>
+        </div>
+    </header>
+     
+
+    <div id="fixingVisibleity"></div>
+ 
+        
+
+    
+<!--  -->
+    <section class="news">
+        <h2>♟️ Latest Chess News</h2>
+        <article>
+            <h3>Grandmaster Championship 2025</h3>
+            <p>The upcoming World Chess Championship is set to take place in June 2025, featuring top grandmasters competing for the title.</p>
+            <a href="https://en.chessbase.com/post/chessable-masters-2025-preview">Read More</a>
+        </article>
+        <article>
+            <h3>AI vs. Human - A New Era</h3>
+            <p>Can artificial intelligence finally surpass the greatest human minds in chess? Experts weigh in on the latest match results.</p>
+            <a href="https://www.thenewatlantis.com/publications/can-chess-survive-artificial-intelligence">Read More</a>
+        </article>
+    </section>
+
+    <section class="events">
+        <h2>📅 Upcoming Chess Events</h2>
+        <ul>
+            <li><strong>March 10:</strong> Online Blitz Tournament</li>
+            <li><strong>April 5:</strong> Chess Meetup in NYC</li>
+            <li><strong>June 20:</strong> World Chess Championship</li>
+        </ul>
+    </section>
+
+    <section class="strategies">
+        <h2>♞ Chess Strategies -  click on each to veiw🎞️</h2>
+        <div id="organisingDiv">
+
+            <div class="strategy-box" onclick="viewVideo(1)">
+                <h3>The Sicilian Defense</h3>
+                <p>A popular and aggressive response to 1.e4, where Black plays 1...c5 to control the center from the flank. It leads to dynamic and sharp positions, often favoring counterattacks. </p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(2)">
+                <h3>The Queen’s Gambit</h3>
+                <p>A classical opening where White plays 1.d4 d5 2.c4, offering a pawn to gain central control. If Black accepts, White aims for long-term positional advantages.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(3)">
+                <h3>The King’s Indian Defense</h3>
+                <p>A solid and counterattacking setup for Black, where they allow White to occupy the center early on and later strike back with pawn breaks like ...e5 or ...c5.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(4)">
+                <h3>The Ruy-Lopez</h3>
+                <p>One of the oldest and most strategic openings, starting with 1.e4 e5 2.Nf3 Nc6 3.Bb5. White applies early pressure on Black’s knight and aims for a long-term positional edge.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(5)">
+                <h3>The London System</h3>
+                <p>A flexible and easy-to-learn opening for White, where the light-squared bishop is developed early to f4 before setting up a strong, compact structure.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(6)">
+                <h3>The Fork Tactic</h3>
+                <p>A tactical maneuver where one piece (usually a knight or pawn) attacks two or more enemy pieces at once. This forces the opponent into a disadvantageous position.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(7)">
+                <h3>Zugzwang</h3>
+                <p>A strategic concept where any move the opponent makes weakens their position. This technique is often used in endgames to force the opponent into making losing moves.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(8)">
+                <h3>The Caro-Kann Defense</h3>
+                <p>A solid and resilient opening for Black, starting with 1.e4 c6. It focuses on building a strong pawn structure and avoiding early weaknesses while preparing counterattacks.</p>
+            </div>
+            <div class="strategy-box" onclick="viewVideo(9)">
+                <h3>The Pin Tactic</h3>
+                <p>A piece (bishop, rook, or queen) attacks an opponent’s piece, preventing its movement to avoid exposing a more valuable piece behind it.</p>
+            </div>
+             
+        </div> 
+    </section>
+
+    <div id="strategiesVidDiv" class="hide">
+        <h2 id="closingTag" >✖</h2> 
+        <iframe id="strategiesVid" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <section class="quotes">
+        <h2>🧠 Quotes by Grandmasters</h2>
+        <blockquote>
+            "When you see a good move, look for a better one." — Emanuel Lasker
+        </blockquote>
+        <blockquote>
+            "Tactics flow from a superior position." — Bobby Fischer
+        </blockquote>
+        <blockquote>
+            "Avoid the crowd. Do your own thinking independently. Be the chess player, not the chess piece." — Ralph Charell
+        </blockquote>
+    </section>
+
+
+    <section class="video-section">
+        <h2>🎥 The Birth Of Chess</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YeB-1F-UKO0?si=I8DNM_wMM4Ytlwwf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+     
+    
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About This Website</h3>
+                <p>Your go-to destination for everything chess. Improve your game, shop for books, boards, and more.</p>
+                <p>© 2025 Pass To Pawn. All rights reserved.</p>
+            </div>
+    
+            <!-- Quick Links & Resources (Side by Side) -->
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Profile-Search</a>
+                    <a href="community.html">Community</a>
+                    <a href="Shop.html">Shopping</a>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="https://www.chess.com">Chess.com</a>
+                    <a href="https://www.fide.com">FIDE</a>
+                    <a href="https://www.uschess.org">US Chess</a>
+                </div>
+            </div>
+    
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with the latest chess news and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="email-input" placeholder="ex. username@gmail.com">
+                    <button class="subscribe-btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("loaderDiv");
+            loader.style.display = "none";
+        })
+    </script>
+    <script src="community.js"></script>
+</body>
+</html>

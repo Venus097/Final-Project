@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Chess Shop</title>
+     
+        
+     
+</head>
+<body style="background-color: #f0ead6;">
+      
+    <div id="loaderDiv">
+        <img id="loader" src="/FinalProject/chessGallery/chessLoader1.gif" >
+    </div>
+
+    <div id="audioDiv">
+        <div id="stopAudio" onclick="cutAudio()">⏹</div>
+        <div id="on_off" onclick="toggleAudio()">⏵</div> 
+        <div id="musiclogo">♪</div>
+          
+    </div>   
+
+
+
+    
+    <header>
+        <div id="headerDiv">
+            
+            <div id="shopping">
+                <p>{Pass To Pawn}</p>
+            </div>
+            <div class="filSpace"></div>
+
+            <img src="/FinalProject/chessGallery/Pawnlogo.png">
+            
+            <div class="filSpace"></div>
+            
+            <nav id="dropdown">
+                
+                <button id="dropdownBtn">Menu  ▼</button>
+                <div id="dropdownContent">
+                    <a class="link" href="index.html">Profile-Search</a>
+                    <a class="link" href="community.html">Learn Chess</a>
+                    <a class="link" href="Shop.html">Shopping</a>
+                     
+                </div>
+
+                <button class="cart-icon fas fa-shopping-cart" id="cartbtn" onclick="toggleCart()"></button>
+
+            </nav>
+        </div> 
+    </header>
+
+    <div id="fixingVisibleity"></div>
+
+<!--  -->
+
+
+    <div id="cartContainer" class="hide">
+        <div id="cartModal">
+            <div class="cart-content">
+                <div id="CartHeader">
+                    <!-- don't delete the div (used for position adjustments) -->
+                    <div></div>
+                    <h2> Your Cart </h2>
+                    <h2 id="close" onclick="toggleCart()">✖</h2> 
+                </div>
+               
+              <ul id="cartItemsList"></ul>
+              <p id="totalPrice">Total: $0</p>
+              <button id="clearCartbtn" onclick="clearCart()">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <h2>Shop Categories</h2>
+        <a href="#books">Books & Guides</a>
+        <a href="#chessboards">Chessboards</a>
+        <a href="#clocks">Clocks</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Books & Guides -->
+        <div id="books" class="section">
+            <h2>Books & Guides</h2>
+            <div id="book_products" class="products">
+                <div class="product">
+
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/book.jpg" alt="Chess Book">
+                    </div>
+                    <p>How to Win at Chess</p>
+                    <p class="description"> Learn chess from International Master and YouTube’s top chess teacher Levy Rozman 
+                        (aka GothamChess) in this refreshing and fun guide for beginner and intermediate players</p>
+                    <button onclick="addToCart('How to Win at Chess', 20.49)">Add to Cart <span class="price">- 20.49$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/book2.jpg" alt="Chess Book">
+                    </div>
+                    <p>Bobby Fischer Teaches Chess</p>
+                    <p class="description ">Learn how to play chess the Bobby Fischer way with the fastest, 
+                        most efficient, most enjoyable method ever devised. Whether you’re just learning the 
+                        game or looking for more complex strategies, these practice problems and exercises will 
+                        help you master the art of the checkmate. </p>
+                    <button onclick="addToCart('Bobby Fischer Teaches Chess', 9.29)">Add to Cart <span class="price">- 9.29$</span></button>
+
+                </div>
+
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/book3.jpg" alt="Chess Book">
+                    </div>
+                    <p>Modern Chess Openings, 15th Edition</p>
+                    <p class="description ">A completely revised and updated edition of the classic English language reference on chess openings, first published more than fifty years ago</p>
+                    <button onclick="addToCart('Modern Chess Openings, 15th Edition', 18.29)">Add to Cart <span class="price">- 18.29$</span></button>
+
+                </div>
+
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/book4.jpg" alt="Chess Book">
+                    </div>
+                    <p>How to Reassess Your Chess</p>
+                    <p class="description ">How to Reassess Your Chess is the popular step-by-step course that will create a marked improvement in anyone's game. In clear, direct language, Silman shows how to dissect a position, recognize its individual parts and ultimately find the move that conforms to the needs of that particular situation.</p>
+                    <button onclick="addToCart('How to Reassess Your Chess', 23.49)">Add to Cart <span class="price">- 23.49$</span></button>
+
+                </div>
+
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/book5.jpg" alt="Chess Book">
+                    </div>
+                    <p>Chess Fundamentals</p>
+                    <p class="description ">Written with the novice chess player in mind, Chess Fundamentals equips you with the essential opening, middlegame, and endgame techniques needed to advance your game.</p>
+                    <button onclick="addToCart('Chess Fundamentals', 9.99)">Add to Cart <span class="price">- 9.99$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/book6.jpg" alt="Chess Book">
+                    </div>
+                    <p>How to Win in the Chess Openings</p>
+                    <p class="description ">In this accessible book, chess master I. A. Horowitz details how to step up your chess game. He outlines the principles and concepts of opening play, discussing the popular attack and defense openings—including the queen’s gambit, the Sicilian defense, the French defense, and many more— and breaks down their individual moves and grand plans.</p>
+                    <button onclick="addToCart('How to Win in the Chess Openings', 12.99)">Add to Cart <span class="price">- 12.99$</span></button>
+
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+        <!-- Chessboards -->
+        <div id="chessboards" class="section">
+            <h2>Chessboards</h2>
+            <div class="products">
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/set.jpg" alt="Chess Book">
+                    </div>
+                    <p>Premium Wooden Chess Set</p>
+                    <p class="description ">Premium Wooden Chess Set, 15.7 Inche Chess Board Game Set for Adults - Folding Board - Pieces Storage Slots, Handmade Portable Travel Chess Game - Beginner Chess Set for Kids, 6 up Age
+                    </p>
+                    <button onclick="addToCart('Premium Wooden Chess Set', 26.91)">Add to Cart <span class="price">- 26.91$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/set2.jpg" alt="Chess Book">
+                    </div>
+                    <p>HOLYKING Compact Chess </p>
+                    <p class="description ">HOLYKING Compact Chess 15.7'' Chess Board, Easy Carry Cloth Chess Set, Portable Travel Chess Game Set, Roll Up Combination Beginner Chess Set for Kids and Adults</p>
+                    <button onclick="addToCart('HOLYKING Compact Chess ', 15.99)">Add to Cart <span class="price">- 15.99$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/set3.jpg" alt="Chess Book">
+                    </div>
+                    <p>Juegoal 20" Portable Chess & Checkers Set</p>
+                    <p class="description ">Portable Chess & Checkers Set, 2 in 1 Travel Board Games for Kids and Adults, Folding Roll up Chess Game Sets, Extra 26 Checker Pieces, Tournament Thick Mousepad Mat with Storage Bag</p>
+                    <button onclick="addToCart('Juegoal 20 Portable Chess & Checkers Set', 22.60)">Add to Cart <span class="price">- 22.60$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/set4.jpg" alt="Chess Book">
+                    </div>
+                    <p>Metal Chess Set</p>
+                    <p class="description ">Metal Chess Set for Adults and Kids – 15" Wooden Chess Board with Modern Metal Chess Pieces Travel Chess Sets with Metal Chessmen – Collectible Elegant Chess Game – Family Vintage Board Game</p>
+                    <button onclick="addToCart('Metal Chess Set', 59.99)">Add to Cart <span class="price">- 59.99$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/set5.jpg" alt="Chess Book">
+                    </div>
+                    <p>King Tournament Chess Set</p>
+                    <p class="description ">4" King Tournament Chess Set Foldable 20" Silicone Chess Board Mat with 2.2" Squares Green Color, Weighted Chess Pieces- 2 Extra Queens, Carrying Case for Storage and Travel</p>
+                    <button onclick="addToCart('King Tournament Chess Set', 39.99)">Add to Cart <span class="price">- 39.99$</span></button>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Clocks -->
+
+        <div id="clocks" class="section">
+            <h2>Clocks</h2>
+            <div class="products">
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/clock.jpg" alt="Chess Book">
+                    </div>
+                    <p>LEAP Chess Clock</p>
+                    <p class="description ">LEAP Chess Clock Digital Timer Advanced for Game and Chess Timer with Bonus & Delay Count down up Alarm</p>
+                    <button onclick="addToCart('LEAP Chess Clock', 25.99)">Add to Cart <span class="price">- 25.99$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/clock2.jpg" alt="Chess Book">
+                    </div>
+                    <p>Tempest Classic Chess Clock</p>
+                    <p class="description ">Tempest Classic Chess Clock/Dock - Just Dock Your own Phone and Play Your Favorite Board Games with This Innovative Game Timer: The Most Customizable Game Clock Ever: Bundled iOS and Android app</p>
+                    <button onclick="addToCart('Tempest Classic Chess Clock', 29.00)">Add to Cart <span class="price">- 29.00$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/clock3.jpg" alt="Chess Book">
+                    </div>
+                    <p>LEAP Chess Clock Digital</p>
+                    <p class="description ">LEAP Chess Clock Digital Chess Timer Professional Chess Clock Timer for Board Games Timer with Alarm Function Golden (Official Store)</p>
+                    <button onclick="addToCart('LEAP Chess Clock Digital', 19.99)">Add to Cart <span class="price">- 19.99$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/clock4.jpg" alt="Chess Book">
+                    </div>
+                    <p>Chess Clock, Quartz Analog</p>
+                    <p class="description ">Chess Clock, Quartz Analog Chess Clock- Board Games Essentials Analog Timer, 7.9 x 2.0 x 4.8inch</p>
+                    <button onclick="addToCart('Chess Clock, Quartz Analog', 25.26)">Add to Cart <span class="price">- 25.26$</span></button>
+
+                </div>
+                <div class="product ">
+                    <div class="zoom-container">
+                        <img class="zoom-img" src="chessGallery/clock5.jpg" alt="Chess Book">
+                    </div>
+                    <p>Chess Timer, Professional Chess</p>
+                    <p class="description ">Clock Game Timer Analogue Clock Chess Timer I-GO Count Up Count Down Timer, International Chess Timer Clock No Battery Needed (Black)</p>
+                    <button onclick="addToCart('Chess Timer, Professional Chess', 29.99)">Add to Cart <span class="price">- 29.99$</span></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About This Website</h3>
+                <p>Your go-to destination for everything chess. Improve your game, shop for books, boards, and more.</p>
+                <p>© 2025 Pass To Pawn. All rights reserved.</p>
+            </div>
+    
+            <!-- Quick Links & Resources (Side by Side) -->
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Profile-Search</a>
+                    <a href="community.html">Community</a>
+                    <a href="Shop.html">Shopping</a>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="https://www.chess.com">Chess.com</a>
+                    <a href="https://www.fide.com">FIDE</a>
+                    <a href="https://www.uschess.org">US Chess</a>
+                </div>
+            </div>
+    
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with the latest chess news and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="email-input" placeholder="ex. username@gmail.com">
+                    <button class="subscribe-btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+      
+
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("loaderDiv");
+            loader.style.display = "none";
+        })
+    </script>
+
+    <script src="chess.js"></script>
+    <script src="shopping.js"></script>
+    
+</body>
+</html>

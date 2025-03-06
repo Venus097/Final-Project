@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     
+ 
+    <link rel="stylesheet" href="styles.css">
+    <title>Chess Hub</title>
+
+</head>
+<body>
+    <div id="loaderDiv">
+        <img id="loader" src="/FinalProject/chessGallery/chessLoader1.gif" >
+    </div>
+      
+    <div id="audioDiv">
+        <div id="stopAudio" onclick="cutAudio()">⏹</div>
+        <div id="on_off" onclick="toggleAudio()">⏵</div> 
+        <div id="musiclogo">♪</div>
+          
+    </div>    
+ 
+
+    <header>
+        <div id="headerDiv">
+            
+            <div id="shopping">
+                <p>{Pass To Pawn}</p>
+            </div>
+            <div class="filSpace"></div>
+
+            <img src="\FinalProject\chessGallery\Pawnlogo.png">
+            
+            <div class="filSpace"></div>
+            <nav id="dropdown">
+                <button id="dropdownBtn">Menu  ▼</button>
+                <div id="dropdownContent">
+                    <a class="link" href="index.html">Profile-Search</a>
+                    <a class="link" href="community.html">Learn Chess</a>
+                    <a class="link" href="Shop.html">Shopping</a>
+                     
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="fixingVisibleity"></div>
+
+    <section class="chess-dashboard">
+        <!-- Profile Search -->
+        <div class="profile-search"  >
+            <div id="searchForm">
+                <h2>Find a Chess.com Profile</h2>
+                <p>simply enter the username then browse through the profile's deatails & stats!</p>
+                <form id="searchProfile">
+                    <input type="text" id="chess-username" placeholder="Enter Chess.com Username">
+                    <button onclick="fetchProfile()">Search</button>
+                </form>
+            </div>
+            <div id="profile-results"></div>
+        </div>
+        
+    </section>
+
+    <div id="errMsg" class="hide">
+        <h2>You Can't submit an empty response !</h2>
+    </div>
+
+
+    <section id="profile-section" class="hide">
+        <div class="profile-container">
+            <!-- Profile Details -->
+            <div class="profile-details">
+              <h2 id="userName">undifined</h2>
+              <p id="userStatus"><strong>Status:</strong>undifined</p><hr>
+              <p id="userVerified"><strong>Verified:</strong>undifined</p><hr>
+              <p id="userLeague"><strong>League:</strong>undifined</p><hr>
+              <p id="userStreamer"><strong>Streamer:</strong>undifined</p><hr>
+              <p id="userCountry"><strong>Country:</strong>undifined</p><hr>
+              <p id="userFollowers"><strong>Followers:</strong> 0000</p>
+            </div>
+            <!-- Profile Picture -->
+            <div class="profile-pic">
+              <img id="userPic" src="https://images.chesscomfiles.com/uploads/v1/user/222655677.9e2840f8.200x200o.ee012d3f97dc.jpg" alt="User Profile Picture" />
+            </div>
+          </div>
+
+          <div class="statsContainer">
+            <h2>Chess Stats</h2>
+            
+            <div class="profileStats">
+                <article> 
+                    <div class="statsText" id="chessDaily">
+                        <h3>Chess Daily</h3>
+                        <p><strong>Last Rating:</strong> 0</p>
+                        <p><strong>Best Rating:</strong> 0 (<a href="https://www.chess.com/game/daily/681087729">Game</a>)</p>
+                        <p><strong>Record:</strong> 0 Wins, 0 Losses, 0 Draw</p>
+                    </div>
+                    <div> 
+                        <img src="chessGallery/dailyIcon-removebg-preview.png" alt="Daily Chess Icon">
+                    </div> 
+                </article>
+                
+            </div>
+            
+            <div class="profileStats">
+                <article>
+                    <div class="statsText" id="chessDaily960">  
+                        <h3>Chess960 Daily</h3>
+                        <p><strong>Last Rating:</strong> 0</p>
+                        <p><strong>Best Rating:</strong> 0 (<a href="https://www.chess.com/game/daily/653116987">Game</a>)</p>
+                        <p><strong>Record:</strong> 0 Wins, 0 Losses, 0 Draws</p>
+                    </div>
+                    <div class="GrowDiv"></div>
+                    <div>
+                        <img src="chessGallery/daily960Icon-removebg-preview.png" alt="Daily960 Chess Icon">
+                    </div>
+                </article> 
+            </div>
+            
+            <div class="profileStats">
+                <article>
+                    <div class="statsText" id="chessRapid">
+                        <h3>Chess Rapid</h3>
+                        <p><strong>Last Rating:</strong> 0</p>
+                        <p><strong>Best Rating:</strong> 0 (<a href="https://www.chess.com/game/live/112267808817">Game</a>)</p>
+                        <p><strong>Record:</strong> 0 Wins, 0 Losses, 0 Draws</p>
+                    </div>
+                    <div class="GrowDiv"></div>
+                    <div >
+                        <img src="chessGallery/rapidIcon-removebg-preview.png" alt="Rapid Chess Icon">
+                    </div>
+                </article>
+                
+                
+            </div>
+            
+            <div class="profileStats">
+                <article>
+                    <div class="statsText" id="chessBullet">
+                        <h3>Chess Bullet</h3>
+                        <p><strong>Last Rating:</strong> 0</p>
+                        <p><strong>Best Rating:</strong> 0 (<a href="https://www.chess.com/game/live/113860158487">Game</a>)</p>
+                        <p><strong>Record:</strong> 0 Wins, 0 Losses, 0 Draws</p>
+                    </div>
+                    <div class="GrowDiv"></div>
+                    <div >
+                        <img src="chessGallery/bulletIcon-removebg-preview.png" alt="Bullet Chess Icon">
+                    </div>
+                </article>
+                
+                
+            </div>
+            
+            <div class="profileStats">
+                <article>
+                    <div class="statsText" id="chessBlitz">
+                        <h3>Chess Blitz</h3>
+                        <p><strong>Last Rating:</strong> 0</p>
+                        <p><strong>Best Rating:</strong> 0 (<a href="https://www.chess.com/game/live/111235257157">Game</a>)</p>
+                        <p><strong>Record:</strong> 0 Wins, 0 Losses, 0 Draws</p>
+                    </div>
+                    <div class="GrowDiv"></div>
+                    <div >
+                        <img src="chessGallery/blitzIcon-removebg-preview.png" alt="Blitz Chess Icon">
+                    </div> 
+                </article>
+                
+            </div>
+            
+            <div class="profileStats">
+                <article>
+                    <div class="statsText" id="chessPuzzles">
+                        <h3>Puzzles & Tactics</h3>
+                        <p><strong>Highest Rating:</strong> 0</p>
+                        <p><strong>Lowest Rating:</strong> 0</p>
+                    </div>
+                    <div class="GrowDiv"></div>
+                    <div >
+                        <img src="chessGallery/puzzlesIcon-removebg-preview.png" alt="Puzzles Chess Icon">
+                    </div>
+                </article>
+                
+                
+            </div>
+            
+            <div class="profileStats">
+                <article>
+                    <div class="statsText" id="chessPuzzleRush">
+                        <h3>Puzzle Rush</h3>
+                        <p><strong>Best Score:</strong> 0 (out of 0 attempts)</p>
+                    </div>
+                    <div class="GrowDiv"></div>
+                    <div>
+                        <img src="chessGallery/rushIcon-removebg-preview.png" alt="Puzzle Rush Chess Icon">
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </section> 
+      
+
+
+
+
+
+
+
+
+
+        <!-- Daily Puzzle -->
+        <!-- <div id="puzzleDiv"> -->
+            <div class="daily-puzzle">
+                <h3>🧩 Daily Chess Puzzle</h3>
+                
+                <div id="daily-puzzle"></div>
+                <div id="loadingPuzzle">Loading puzzle...</div>
+                
+            </div>
+        <!-- </div> -->
+           
+        <!-- Live Chess Widget -->
+        <!-- <div class="live-chess">
+          <h2>Live Chess Games</h2>
+          <div id="live-games">Fetching live games...</div>
+        </div> -->
+       
+
+      
+    
+    <footer class="footer" >
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About This Website</h3>
+                <p>Your go-to destination for everything chess. Improve your game, shop for books, boards, and more.</p>
+                <p>© 2025 Pass To Pawn. All rights reserved.</p>
+            </div>
+    
+            <!-- Quick Links & Resources (Side by Side) -->
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Profile-Search</a>
+                    <a href="community.html">Community</a>
+                    <a href="Shop.html">Shopping</a>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="https://www.chess.com">Chess.com</a>
+                    <a href="https://www.fide.com">FIDE</a>
+                    <a href="https://www.uschess.org">US Chess</a>
+                </div>
+            </div>
+    
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with the latest chess news and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="email-input" placeholder="ex. username@gmail.com">
+                    <button class="subscribe-btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+       
+       
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("loaderDiv");
+            loader.style.display = "none";
+        })
+    </script>
+
+    <script src="chess.js"></script>
+
+</body>
+</html>
