@@ -22,7 +22,7 @@ document.getElementById("dropdownBtn").addEventListener("click", showDropdown);
 
 
   
-let audio = new Audio("/FinalProject/chessGallery/piano.mp3");
+let audio = new Audio("chessGallery/piano.mp3");
 const pauseBtn = document.getElementById("on_off");
 let musicPlaying = false;
 
