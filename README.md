@@ -20,7 +20,10 @@ Welcome to the **PASS TO PAWN**, an interactive online platform for chess enthus
 1. Clone this repository:  
    ```bash
    git clone https://github.com/Venus097/Final-Project.git
-
+   
+2. Navigate to the project folder:
+   ```bash
+   cd chess-website
 
 
 ## 📌 Tech Stack
