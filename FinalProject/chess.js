@@ -1,4 +1,3 @@
-console.log("JS file is loaded");
 
 function showDropdown(){
     const dropdown = document.getElementById("dropdownContent");
